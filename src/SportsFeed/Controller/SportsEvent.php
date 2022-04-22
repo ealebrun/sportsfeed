@@ -8,7 +8,11 @@ use DateTime;
 
 //abstract class for an event
 abstract class Event {
-  public function getEventName() : string; 
+  public $eventName;
+  public function __construct($eventName) {
+    $this->eventName = $eventName;
+  }
+  abstract public function getEventName() : string; 
 }
 
 //super class for a SportsEvent
@@ -32,7 +36,7 @@ class SportsEvent extends Event
   
   public function getEventName(): string {
     return 'Event Title'. $this->eventTitle;
-  };
+  }
   
   public function __serialize(): array {
     return ["sportsEvent" => 'some new value'];
@@ -63,16 +67,15 @@ class SportsScore extends SportsEvent {
     string $eventScore
   )
   {
-    parent::__construct(
-      $eventTitle, $eventURL, $eventDescription, $eventCategory, $eventDateString, $eventGUID, $eventOpponent);
+    parent::__construct($eventTitle, $eventURL, $eventDescription, $eventCategory, $eventDateString, $eventGUID, $eventOpponent);
       $this->eventScore = $eventScore;
-    )
+
   }
 }
 
 //subclass to create a score for future events
 class FutureEvent extends SportsEvent {
-  public string $eventSeed
+  public string $eventSeed;
   public function __construct(
     string $eventTitle,
     string $eventURL,
@@ -84,10 +87,8 @@ class FutureEvent extends SportsEvent {
     string $eventScore
   )
   {
-    parent::__construct(
-      $eventTitle, $eventURL, $eventDescription, $eventCategory, $eventDateString, $eventGUID, $eventOpponent);
+    parent::__construct($eventTitle, $eventURL, $eventDescription, $eventCategory, $eventDateString, $eventGUID, $eventOpponent);
       $this->eventSeed = $eventSeed;
-    )
   }
 }
 //subclass for baseball
@@ -104,11 +105,9 @@ class BaseballEvent extends SportsEvent {
     string $eventOpponent,
   )
   {
-    parent::__construct(
-      $eventTitle, $eventURL, $eventDescription, $eventCategory, $eventDateString, $eventGUID, $eventOpponent);
+    parent::__construct($eventTitle, $eventURL, $eventDescription, $eventCategory, $eventDateString, $eventGUID, $eventOpponent);
       $this->inningsPlayed = $inningsPlayed;
       $this->homeRuns = $homeRuns;
-    )
   }
 }
 
