@@ -1,7 +1,6 @@
 <?php
 /**
- * Sportsfeed Controller
- * NOTE: goes in the src/SportsFeed/Controller folder as SportsEvent.php
+ * NOTE: Keeping this for refence as I split classes into separate files and create an interface.
  */
 namespace SportsFeed\Controller;
 use DateTime;
