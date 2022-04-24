@@ -3,10 +3,8 @@
  * Creates a future event object
  */
  
- 
 namespace SportsFeed\Controller;
 use DateTime;
-
 
 //subclass to create a score for future events
 class FutureEvent extends SportsEvent {
