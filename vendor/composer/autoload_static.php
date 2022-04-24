@@ -34,12 +34,12 @@ class ComposerStaticInit97b6c4c092be9a54b8a8fa646d0af064
     public static $prefixDirsPsr4 = array (
         'SportsFeed\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/SportsFeed',
+            0 => __DIR__ . '/../..' . '/SportsFeed/Controller',
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (

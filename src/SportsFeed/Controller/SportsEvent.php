@@ -41,7 +41,7 @@ abstract class SportsEvent implements EventInterface
   //set array of events
   public function setEvents(EventInterface $events): self {
     $this->events = $events;
-  return $this ;
+    return $this ;
   }
 
   //get array of events
