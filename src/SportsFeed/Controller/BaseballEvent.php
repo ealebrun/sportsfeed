@@ -10,15 +10,6 @@ use DateTime;
 class BaseballEvent extends SportsEvent {
   public string $inningsPlayed;
   public string $homeRuns;
-  public function __construct(
-    string $eventTitle,
-    string $eventURL,
-    string $eventDescription,
-    string $eventCategory,
-    string $eventDateString,
-    string $eventGUID,
-    string $eventOpponent,
-  )
   {
     parent::__construct($eventTitle, $eventURL, $eventDescription, $eventCategory, $eventDateString, $eventGUID, $eventOpponent);
       $this->inningsPlayed = $inningsPlayed;
