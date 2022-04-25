@@ -1,3 +1,4 @@
+<?php
 /**
  * Sportsfeed Controller
  * Creates a baseball event object

@@ -2,7 +2,8 @@
 //for github repo
 //include __DIR__ . '/../vendor/autoload.php';
 //for vm sandbox
-include __DIR__.'/../sportsfeed/sportsfeed/vendor/autoload.php';
+//include __DIR__.'/../sportsfeed/sportsfeed/vendor/autoload.php';
+include __DIR__.'/../sportsfeed/vendor/autoload.php';
 
 use SportsFeed\Controller\ { SportsEvent, SportsScore, FutureEvent, BaseballEvent };
 
