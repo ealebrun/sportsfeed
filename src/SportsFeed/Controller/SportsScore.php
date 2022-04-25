@@ -1,3 +1,4 @@
+<?php
 /**
  * Sportsfeed Controller
  * Creates a SportsScore object using the EventInterface.

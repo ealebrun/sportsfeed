@@ -1,3 +1,4 @@
+<?php
 /**
  * Sportsfeed Controller
  * Creates a future event object
