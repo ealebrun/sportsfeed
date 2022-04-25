@@ -5,15 +5,21 @@
  */
 
 namespace SportsFeed\Controller;
-use DateTime;
 
 
 //subclass to create a score for past events
 class SportsScore extends SportsEvent {
-  public string $eventScore;
+  public function __construct(
+    public SportsEvent $obj,
+    public string $eventScore
+  )
   {
-    parent::__construct($eventTitle, $eventURL, $eventDescription, $eventCategory, $eventDateString, $eventGUID, $eventOpponent);
-      $this->eventScore = $eventScore;
-
+    parent::__construct($obj->eventTitle, 
+					    $obj->eventURL, 
+					    $obj->eventDescription, 
+					    $obj->eventCategory, 
+					    $obj->eventDateString, 
+					    $obj->eventGUID, 
+					    $obj->eventOpponent);
   }
 }

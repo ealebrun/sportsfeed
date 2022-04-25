@@ -12,14 +12,15 @@ echo $testEvent1->eventTitle . $testEvent1->eventURL;
 
 $testEvent2 = new SportsEvent('Bryant, Providence, 1-3','http://bryant.prestosports.com/sports/wvball/2020-21/schedule#xqntxarvzgv7s6nb','Women\'s Volleyball on Feb 14, 2021 at 1:00 PM: Bryant, Providence, Final, 1-3','Women\'s Volleyball','Sun, 14 Feb 2021 18:00:00 GMT','http://bryant.prestosports.com/sports/wvball/2020-21/schedule#xqntxarvzgv7s6nb','at Providence');
 echo $testEvent2->eventTitle . $testEvent1->eventURL;
+var_dump($testEvent2);
 
-$testSportsScore = new SportsScore('Bryant, Providence, 1-3','http://bryant.prestosports.com/sports/wvball/2020-21/schedule#xqntxarvzgv7s6nb','Women\'s Volleyball on Feb 14, 2021 at 1:00 PM: Bryant, Providence, Final, 1-3','Women\'s Volleyball','Sun, 14 Feb 2021 18:00:00 GMT','http://bryant.prestosports.com/sports/wvball/2020-21/schedule#xqntxarvzgv7s6nb','at Providence','L, 3-1');
+$testSportsScore = new SportsScore($testEvent2, 'L, 3-1');
 echo $testSportsScore->eventTitle . $testSportsScore->eventURL . $testSportsScore->eventScore;
 
-$testFutureEvent = new FutureEvent('Bryant, Providence, 1-3','http://bryant.prestosports.com/sports/wvball/2020-21/schedule#xqntxarvzgv7s6nb','Women\'s Volleyball on Feb 14, 2021 at 1:00 PM: Bryant, Providence, Final, 1-3','Women\'s Volleyball','Sun, 14 Feb 2021 18:00:00 GMT','http://bryant.prestosports.com/sports/wvball/2020-21/schedule#xqntxarvzgv7s6nb','at Providence','Third');
+$testFutureEvent = new FutureEvent($testEvent2, 'Third');
 echo $testFutureEvent->eventTitle . $testFutureEvent->eventURL . $testFutureEvent->eventSeed;
 
-$testEventBaseball = new BaseballEvent('Bryant, Providence, 1-3','http://bryant.prestosports.com/sports/wvball/2020-21/schedule#xqntxarvzgv7s6nb','Women\'s Volleyball on Feb 14, 2021 at 1:00 PM: Bryant, Providence, Final, 1-3','Women\'s Volleyball','Sun, 14 Feb 2021 18:00:00 GMT','http://bryant.prestosports.com/sports/wvball/2020-21/schedule#xqntxarvzgv7s6nb','at Providence','8');
+$testEventBaseball = new BaseballEvent($testEvent2, 8, 2);
 echo $testEventBaseball->eventTitle . $testEventBaseball->eventURL . $testEventBaseball->inningsPlayed .  $testEventBaseball->homeRuns;
 
 //magic method calls
