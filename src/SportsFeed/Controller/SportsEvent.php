@@ -8,8 +8,10 @@ namespace SportsFeed\Controller;
 use DateTime;
 
 //super class for a SportsEvent
-abstract class SportsEvent implements EventInterface
+class SportsEvent implements EventInterface
 {
+  const EVENT_KEY = 'sportsEvent';
+  const EVENT_DEFAULT = 'default';
   // constructor argument promotion
   // only in PHP 8.0+
   public DateTime $eventDate;
@@ -52,13 +54,12 @@ abstract class SportsEvent implements EventInterface
   
   //retrurns a serialized array of sports events
   public function __serialize(): array {
-    return ["sportsEvent" => 'some new value'];
+    return [static::EVENT_KEY => 'some new value'];
   }
   
   //unserializes an array of sports events
   public function __unserialize(array $data): void {
-    $this->fooValue = $data["fooValue"];
-    $this->barValue = 'barValue';
+    $this->fooValue = $data[static::EVENT_KEY] ?? static::EVENT_DEFAULT;
   }
   
   public function __toString()
